@@ -324,17 +324,6 @@ pdf("output_2.pdf",family="Times",height=1.75,width=5)
 par(mar=c(2.75,2.75,.5,.5),
     mgp=c(1.7,.7,0))
 
-# beta.bma <- apply(X = lst_beta_post,
-#                   MARGIN = 2,
-#                   FUN = mean,
-#                   na.rm = TRUE)
-# 
-# y.te.bma <- round(dtf_X %*% beta.bma, 0)
-# mean((dtf_y - y.te.bma)^2)
-# layout(matrix(c(1,1,2),
-#               nrow=1,
-#               ncol=3))
-
 plot(apply(X = lst_z_post,
            MARGIN = 2,
            FUN = mean,
@@ -348,14 +337,6 @@ plot(apply(X = lst_z_post,
      lwd=2) ; abline(h=0.5,
                      col="red",
                      lty=2)
-
-
-# plot(dtf_y,
-#      y.te.bma,
-#      xlab=expression(italic(y)[test]),
-#      ylab=expression(hat(italic(y))[test])) ; abline(0,1,
-#                                                      col="red",
-#                                                      lty=2)
 
 dev.off()
 
